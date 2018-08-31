@@ -2,9 +2,14 @@
   <div class="card-header"><h5>{{actu.titre}}</h5></div>
     <div class="card-body">
         <div [innerHTML]="actu.contenu"></div>
+        <br/>
+        <br/>
+        <div class ="col" *ngIf="accountAdmin">
+                <button type="submit" class="btn btn-primary mb-2" (click)="delete()">Supprimer</button>
+            </div>
     </div>
 </div>
-<div class="card animated fadeIn" *ngIf="(!actuSubmitted)">
+<div class="card animated fadeIn" *ngIf="(!actuSubmitted)" >
     <div class="input-group input-group-lg">
         <div class="input-group-prepend">
           <span class="input-group-text" id="inputGroup-sizing-lg">Titre de l'actualité</span>
@@ -13,6 +18,7 @@
       </div>
         <div [froalaEditor] *ngIf="accountAdmin" [(froalaModel)]="content">Veuillez entrer une actualité ...</div><br>
         <div class="card-body">
+        <label style="color: red" *ngIf="erreur">Veuillez entrer un titre et du contenu !</label>
         <div class ="col">
             <button type="submit" class="btn btn-primary mb-2" (click)="submit()">Envoyer</button>
         </div>
@@ -22,6 +28,6 @@
 <div class="card animated fadeIn"  *ngIf="(actuSubmitted)">
     <div class="card-header"><h5>Succès !</h5></div>
       <div class="card-body">
-          <label>Article publié avec succès !</label>
+          <label>Article publié avec succès ! Veuillez rafraîchir la page.</label>
       </div>
 </div>

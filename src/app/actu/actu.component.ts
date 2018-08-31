@@ -17,6 +17,7 @@ export class ActuComponent {
   auteur = "wawa";
   date: any = new Date();
   actuPost= new Actualite;
+  erreur = false;
   constructor(private actuService: ActuService) {
     const actuTest = new Actualite;
     actuTest.titre = 'Test affichage titre Article';
@@ -28,15 +29,20 @@ export class ActuComponent {
     this.actuService.getActualites().then(res=>{this.actuTab=res})
   }
   submit(){
-    if (this.titre.length>0 && this.content.length>0){
+    if (this.titre && this.content){
       this.actuPost.auteur = this.auteur
       this.actuPost.contenu = this.content
       this.actuPost.date = this.date
       this.actuPost.titre = this.titre
       this.actuSubmitted=true
       this.actuService.postActu(this.actuPost)
-      this.actuService.getActualites().then(res=>{this.actuTab=res})
+    } else {
+      this.erreur = true
     }
+  }
+
+  delete(){
+
   }
 
   getAllArticles(){
