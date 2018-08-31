@@ -6,8 +6,11 @@ import { Actualite } from '../model/Actualite';
         styleUrls: [ 'actu.component.css'],
     })
 export class ActuComponent {
-
+  content: String;
+  accountAdmin = true;
   actuTab: Actualite[];
+  titre: String;
+  actuSubmitted = false;
   constructor() {
     const actuTest = new Actualite;
     actuTest.titre = 'Test affichage titre Article';

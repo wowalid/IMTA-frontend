@@ -1,8 +1,25 @@
-<div class="card animated fadeIn" *ngFor="let actu of actuTab">
+<div class="card animated fadeIn" *ngFor="let actu of actuTab" *ngIf="(!actuSubmitted)">
   <div class="card-header"><h5>{{actu.titre}}</h5></div>
     <div class="card-body">
         <label>{{actu.contenu}}</label>
     </div>
 </div>
+<div class="card animated fadeIn" *ngIf="(!actuSubmitted)">
+    <div class="input-group input-group-lg">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-lg">Titre de l'actualité</span>
+        </div>
+        <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" [(ngModel)]="titre"/>
+      </div>
+        <div [froalaEditor] *ngIf="accountAdmin" [(froalaModel)]="content">Veuillez entrer une actualité ...</div><br>
+        <div class ="col">
+            <button type="submit" class="btn btn-primary mb-2">Envoyer</button>
+        </div>
+  </div>
 
-
+<div class="card animated fadeIn"  *ngIf="(actuSubmitted)">
+    <div class="card-header"><h5>Succès !</h5></div>
+      <div class="card-body">
+          <label>Article publié avec succès !</label>
+      </div>
+</div>
