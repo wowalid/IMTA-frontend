@@ -26,6 +26,11 @@ export class ActuService {
 	let body = res.json();
         return body || {};
     }
+
+    delete(id: number): Promise<Number>{
+        return null;
+    }
+
     getActualites(): Promise<Actualite[]> {
         return this.http.get(this.url + 'all').toPromise()
 	    .then(this.extractData)
