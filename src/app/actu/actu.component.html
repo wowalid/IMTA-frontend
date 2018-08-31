@@ -1,4 +1,4 @@
-<div class="card animated fadeIn" *ngFor="let actu of actuTab" *ngIf="(!actuSubmitted)">
+<div class="card animated fadeIn" *ngFor="let actu of actuTab">
   <div class="card-header"><h5>{{actu.titre}}</h5></div>
     <div class="card-body">
         <label>{{actu.contenu}}</label>
@@ -12,9 +12,11 @@
         <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" [(ngModel)]="titre"/>
       </div>
         <div [froalaEditor] *ngIf="accountAdmin" [(froalaModel)]="content">Veuillez entrer une actualité ...</div><br>
+        <div class="card-body">
         <div class ="col">
-            <button type="submit" class="btn btn-primary mb-2">Envoyer</button>
+            <button type="submit" class="btn btn-primary mb-2" (click)="submit()">Envoyer</button>
         </div>
+    </div>
   </div>
 
 <div class="card animated fadeIn"  *ngIf="(actuSubmitted)">

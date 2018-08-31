@@ -40,7 +40,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
-
+import { ActuService } from './actu.service'
 @NgModule({
   imports: [
     BrowserModule,
