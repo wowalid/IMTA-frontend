@@ -1,10 +1,43 @@
-<div class="animated fadeIn">
-  <div class="card">
-    <div class="card-header">
-      <label> TEST APP WEB </label>
+<head><link rel="stylesheet" href="https://unpkg.com/@coreui/icons/css/coreui-icons.min.css"></head>
+<div class="row animated fadeIn">
+    <div class="col-md-6">
+      <div class="mycard" [routerLink]="['/']">
+        <br/>
+        <span style="font-size:90px;"><i class="cui-file"></i></span>
+        <br/>
+             Réserver un livre
+          <br/>
+          <br/>
       </div>
-    <div class="card-body">
-      <label> CONTENU </label>
     </div>
+    <div class="col-md-6">
+      <div class="mycard" [routerLink]="['/']">
+          <br/>
+          <span style="font-size:90px;"><i class="cui-wrench"></i></span>
+          <br/>
+          Réserver du matériel
+          <br/>
+          <br/>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="mycard" [routerLink]="['/']">
+        <br/>
+        <span style="font-size:90px;"><i class="cui-dashboard"></i></span>
+        <br/>
+         Réserver une salle
+        <br/>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="mycard"  [routerLink]="['/exploitation']">
+          <br/>
+          <span style="font-size:90px;"><i class="cui-calendar"></i></span>
+          <br/>
+          Prendre rendez-vous
+          <br/>
+          <br/>
+      </div>
     </div>
 </div>
+

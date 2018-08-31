@@ -81,6 +81,14 @@ export const routes: Routes = [
       {
         path: 'widgets',
         loadChildren: './views/widgets/widgets.module#WidgetsModule'
+      },
+      {
+        path: 'horaires',
+        loadChildren: './horaires/horaires.module#HorairesModule'
+      },
+      {
+        path: 'actu',
+        loadChildren: './actu/actu.module#ActuModule'
       }
     ]
   }

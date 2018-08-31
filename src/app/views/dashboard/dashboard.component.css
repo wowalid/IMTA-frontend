@@ -1,0 +1,36 @@
+.mycard {
+  background-color:rgba(0, 0, 0, 0.5);
+  border: 1px solid white;
+  border-radius: 10px;
+  width:100%;
+  text-align: center;
+  margin: 15px;
+  font-size: 23px;
+  transition: color 0.5s ease, background-color 0.5s ease;
+  height:250px;
+  overflow:hidden;
+  color:rgb(233, 233, 233);
+}
+.fond1 {
+  background-image: url('/assets/img/LEAP-Perspective.jpg');
+  background-size: cover;
+  opacity: 0.9;
+  height:240px;
+}
+.mycard:hover {
+  cursor:pointer;
+  background-color:rgba(0, 0, 0, 0.7);
+
+}
+.orange-hover:hover {
+  color: orange;
+}
+.rouge-hover:hover {
+  color: red;
+}
+.green-hover:hover {
+  color: green;
+}
+.blue-hover:hover {
+  color: blue;
+}
