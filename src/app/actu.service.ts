@@ -13,6 +13,8 @@ import { Actualite } from './model/Actualite';
 export class ActuService {
     url = "http://localhost:11041/actu/";
     constructor(private http:Http) { }
+
+
     postActu(actu:Actualite): Promise<Actualite> {
 	let headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: headers });
@@ -23,6 +25,11 @@ export class ActuService {
     private extractData(res: Response) {
 	let body = res.json();
         return body || {};
+    }
+    getActualites(): Promise<Actualite[]> {
+        return this.http.get(this.url + 'all').toPromise()
+	    .then(this.extractData)
+	    .catch(this.handleErrorPromise);
     }
     private handleErrorObservable (error: Response | any) {
 	console.error(error.message || error);
